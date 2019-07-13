@@ -16,6 +16,7 @@ makedocs(;
     pages=[
         "Home" => "index.md",
         "Results" => "generated/results.md",
+        "GEMM" => "gemm.md",
     ],
     repo="https://github.com/tkf/TransducersBenchmarksReports.jl/blob/{commit}{path}#L{line}",
     sitename="TransducersBenchmarksReports.jl",

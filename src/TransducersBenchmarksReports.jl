@@ -8,6 +8,8 @@ using Transducers
 benchpath(pathparts...) =
     joinpath(dirname(dirname(pathof(Transducers))), "benchmark", pathparts...)
 
+loadresult() = PkgBenchmark.readresults(benchpath("result.json"))
+
 function mayberun()
     resultpath = benchpath("result.json")
     if isfile(resultpath)
@@ -15,7 +17,7 @@ function mayberun()
     else
         Run.script(benchpath("runbenchmarks.jl"))
     end
-    return PkgBenchmark.readresults(resultpath)
+    return loadresult()
 end
 
 end # module
