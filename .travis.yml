@@ -5,23 +5,16 @@ os:
   # - osx
 julia:
   - 1.1
-  - nightly
 matrix:
   allow_failures:
     - julia: nightly
   fast_finish: true
 notifications:
   email: false
-after_success:
-  - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
-  - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Coveralls.submit(process_folder())'
-jobs:
-  include:
-    - stage: Documentation
-      julia: 1.1
-      script: julia --project=docs --color=yes -e '
-          using Pkg;
-          Pkg.develop(PackageSpec(path=pwd()));
-          Pkg.instantiate();
-          include("docs/make.jl");'
-      after_success: skip
+before_install:
+  - unset JULIA_PROJECT
+  - julia -e 'using Pkg; pkg"add https://github.com/tkf/Run.jl"'
+install:
+  - julia -e 'using Run; Run.prepare_docs()'
+script:
+  - julia -e 'using Run; Run.docs()'
