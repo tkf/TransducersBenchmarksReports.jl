@@ -1,4 +1,5 @@
 using Documenter
+using PkgBenchmark
 using Transducers
 using TransducersBenchmarksReports
 using TransducersBenchmarksReports: mayberun, benchpath
