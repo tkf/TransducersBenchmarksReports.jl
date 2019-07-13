@@ -234,7 +234,7 @@ version = "0.3.0-DEV"
 deps = ["BenchmarkTools", "PkgBenchmark", "Run", "Transducers"]
 path = ".."
 uuid = "c444cbc0-a5b1-11e9-0278-1137774b98da"
-version = "0.1.0"
+version = "0.0.0"
 
 [[UUIDs]]
 deps = ["Random", "SHA"]
