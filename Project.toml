@@ -3,6 +3,12 @@ uuid = "c444cbc0-a5b1-11e9-0278-1137774b98da"
 authors = ["Takafumi Arakaki <aka.tkf@gmail.com>"]
 version = "0.1.0"
 
+[deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+PkgBenchmark = "32113eaa-f34f-5b0d-bd6c-c81e245fc73d"
+Run = "e7132d5a-96e2-11e9-15da-db8a129aaaf8"
+Transducers = "28d57a85-8fef-5791-bfe6-a80928e7c999"
+
 [compat]
 julia = "1.1"
 
