@@ -11,6 +11,10 @@ matrix:
   fast_finish: true
 notifications:
   email: false
+
+# Do not build on master (use tags):
+if: NOT (branch = master)
+
 before_install:
   - unset JULIA_PROJECT
   - julia -e 'using Pkg; pkg"add https://github.com/tkf/Run.jl"'
