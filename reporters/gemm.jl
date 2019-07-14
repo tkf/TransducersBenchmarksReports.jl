@@ -25,7 +25,8 @@ function trialasrow((key, trial),)
     return (impl=impl, simd=simd, n=n, stats...)
 end
 
-data = trialasrow.(leaves(benchmarkgroup(loadresult())["gemm"]))
+group = benchmarkgroup(loadresult())["gemm"]
+data = trialasrow.(leaves(group["mul"]))
 
 df = melt(DataFrame(data), [:impl, :simd, :n])
 
